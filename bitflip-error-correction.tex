@@ -1,7 +1,8 @@
 \documentclass[a4paper, 12pt]{scrartcl}
 
 \title{Quantum Error Correction}
-\subtitle{Quantum Bit-Flip Error Correction}
+\subtitle{Qubit Bit-Flip and Phase-Flip Error Correction}
+
 \author{Abdul Fatah Jamro}
 \date{\today}
 
@@ -31,7 +32,20 @@
   This circuit is called bit flip error correcting circuit. This circuit of 3 qubits has capacity 
   to correct the error if one qubit is flipped only. It can not correct the qubit if
   more than one qubits are flipped.
+\section{Phase-flip error}
+  In quantum circuit Phase-flip error occurs that changes the phase of qubit from 1 to -1 and from + to -.
+  This error correction also require three qubits to make one qubit phase error free. Bit flip and phase flip error correction circuits are differen.
 
-  Python code of this quantum circuit is written and availbe in jupyter notebook file in this repository.
+\section{Phase-flip circuit}
+  For enconding part Logical qubit (qubit one) is applied control-NOT gate with second and third qubit.
+  Then all three qubits are kept in superposition or $+$ state by applying Hadamard (H) gate.
+  while decoding circuit is mirrored of encoding part and applied toffoli gate at the end.
+  In this way, Phase-flip error of one qubit can be correct.
+
+\section{note}
+  Quantum circuits for bit-flip and phase-flip are different.
+
+\section{Python code}
+Python code of this quantum circuit is written and availbe in jupyter notebook file in this repository.
 
 \end{document}
