@@ -1,0 +1,37 @@
+\documentclass[a4paper, 12pt]{scrartcl}
+
+\title{Quantum Error Correction}
+\subtitle{Quantum Bit-Flip Error Correction}
+\author{Abdul Fatah Jamro}
+\date{\today}
+
+\begin{document}
+
+
+\maketitle
+  In this article, We consider quantum error correction. 
+  Perticularly, We describe bitflip error in quantum computing 
+  and correct it using qiskit python.
+
+\section{Introduction}
+  Qubit is very fragile in nature. It is valnurable to decoherence and noise.
+  Qubit mainly come across with two type of errors bit-flip and phase-flip errors.
+  We can correct qubit errors by quantum error correction techinques. 
+  Bit-flip error can be corrected using quantum circuit called bit flip code.
+
+  \section{Bit flip error}
+  Bit flip error is such an error in which a bit is flipped from one state to 
+  its opposite state. For instance 0 flips to 1 state $0  -> 1$
+  In quantum circuit, We use 3 qubits, one logical qubit and two ancillary (extra) qubits.
+\section{Bit flip circuit}
+  We encode the logical qubit by (entangling) applying control NOT $CX or CNOT$ gate with other two ancillary qubits.
+  This process is also called encoding. After encoding if main qubit or logical qubit is flipped
+  we repeat the process of applying CNOT gates just like mirroring the encoding process.
+  This mirroring is also called decoding. At the end a taffoli gate is applied that is control-control-NOT gate $CCX$
+  This circuit is called bit flip error correcting circuit. This circuit of 3 qubits has capacity 
+  to correct the error if one qubit is flipped only. It can not correct the qubit if
+  more than one qubits are flipped.
+
+  Python code of this quantum circuit is written and availbe in jupyter notebook file in this repository.
+
+\end{document}
